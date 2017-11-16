@@ -24,13 +24,13 @@ import pickle
 
 # Directories 
 
-# HOME_DIR = path.join("/home", getlogin())
-HOME_DIR = path.join("/Users/robert.dempsey/Dev/daamlobd")
+HOME_DIR = path.join("/home", getlogin())
 DATA_DIR = path.join(HOME_DIR, "data")
-MLLIB_DATA_DIR = path.join(DATA_DIR, "mllib")
 SKLEARN_DATA_DIR = path.join(DATA_DIR, "sklearn")
-DATA_FILE   = path.join(DATA_DIR, "pima-indians-diabetes.data")
 PICKLE_FILE = path.join(SKLEARN_DATA_DIR, "lr_model_sklearn.pkl")
+
+MLLIB_DATA_DIR = path.join("/home/students/data/", "mllib")
+DATA_FILE   = path.join("/home/students/data", "pima-indians-diabetes.data")
 
 
 # In[ ]:

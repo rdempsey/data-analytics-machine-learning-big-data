@@ -22,18 +22,8 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 
 
 # Directories 
-
-# HOME_DIR = path.join("/home", getlogin())
-HOME_DIR = path.join("/Users/robert.dempsey/Dev/daamlobd")
-DATA_DIR = path.join(HOME_DIR, "data")
-MLLIB_DATA_DIR = path.join(DATA_DIR, "mllib")
+MLLIB_DATA_DIR = path.join("/home/students/data/", "mllib")
 DATA_FILE   = path.join(MLLIB_DATA_DIR, "sample_libsvm_data.txt")
-
-# Check the things
-print("Home Directory: {}".format(HOME_DIR))
-print("Data Directory: {}".format(DATA_DIR))
-print("MLlib Data Directory: {}".format(MLLIB_DATA_DIR))
-print("Data File: {}".format(DATA_FILE))
 
 
 # In[ ]:

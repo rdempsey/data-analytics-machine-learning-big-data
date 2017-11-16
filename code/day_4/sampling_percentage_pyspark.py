@@ -16,7 +16,7 @@ from pyspark.sql import SQLContext
 
 
 # Location of the data file
-data_file = "/Users/robert.dempsey/Dev/daamlobd/data/ontime/flights.csv"
+data_file = "/home/students/data/ontime/flights.csv"
 
 
 # In[ ]:
@@ -31,7 +31,7 @@ sqlContext = SQLContext(sc)
 
 
 # Load the data - creates a Spark dataframe
-parking_file = "/Users/robert.dempsey/Dev/daamlobd/data/sf_parking/sf_parking_clean.json"
+parking_file = "/home/students/data/sf_parking/sf_parking_clean.json"
 parking_df = sqlContext.read.json(parking_file)
 parking_df.show(10)
 

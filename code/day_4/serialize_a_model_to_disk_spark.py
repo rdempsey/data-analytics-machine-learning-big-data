@@ -23,12 +23,12 @@ from pyspark.ml.regression import LinearRegression, LinearRegressionModel
 
 # Directories 
 
-# HOME_DIR = path.join("/home", getlogin())
-HOME_DIR = path.join("/Users/robert.dempsey/Dev/daamlobd")
+HOME_DIR = path.join("/home", getlogin())
 DATA_DIR = path.join(HOME_DIR, "data")
-MLLIB_DATA_DIR = path.join(DATA_DIR, "mllib")
-DATA_FILE   = path.join(MLLIB_DATA_DIR, "sample_linear_regression_data.txt")
 MODEL_FILE_PATH = path.join(DATA_DIR, "linear_model")
+
+MLLIB_DATA_DIR = path.join("/home/students/data/", "mllib")
+DATA_FILE   = path.join(MLLIB_DATA_DIR, "sample_linear_regression_data.txt")
 
 # Check the things
 print("Home Directory: {}".format(HOME_DIR))

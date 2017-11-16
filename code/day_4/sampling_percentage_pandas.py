@@ -15,7 +15,7 @@ import numpy as np
 
 
 # Location of the data file
-data_file = "/Users/robert.dempsey/Dev/daamlobd/data/ontime/flights.csv"
+data_file = "/home/students/data/ontime/flights.csv"
 
 
 # In[ ]:
