@@ -79,7 +79,7 @@ sc = SparkContext(appName="Movie Rating Analysis")
 
 
 # Create movies RDD
-movies = sc.textFile(MOVIE_DATA_FILE)             .map(lambda x: x.split('|'))             .map(parse_movie)
+movies = sc.textFile(MOVIE_DATA_FILE).map(lambda x: x.split('|')).map(parse_movie)
 
 for movie in movies.take(5):
     print(movie)
@@ -100,7 +100,7 @@ for movie in movie_pairs.take(5):
 
 
 # Create gen_y RDD and filter on 18-24 age group, collect only user_ids
-gen_y = sc.textFile(GEN_Y_FILE)             .map(lambda x: x.split('|'))             .map(parse_user)             .filter(lambda u: u.age >= 18 and u.age <= 24)             .map(lambda u: u.user_id)             .collect()
+gen_y = sc.textFile(GEN_Y_FILE).map(lambda x: x.split('|')).map(parse_user).filter(lambda u: u.age >= 18 and u.age <= 24).map(lambda u: u.user_id).collect()
 # user_id
 print(gen_y[0])
 
@@ -116,7 +116,7 @@ gen_y_ids = sc.broadcast(set(gen_y))
 
 
 # Create ratings RDD
-ratings = sc.textFile(RATINGS_FILE)             .map(lambda x: x.split('\t'))             .map(parse_rating)
+ratings = sc.textFile(RATINGS_FILE).map(lambda x: x.split('\t')).map(parse_rating)
 
 # user_id, movie_id, rating, timestamp
 for rating in ratings.take(5):

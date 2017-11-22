@@ -154,14 +154,13 @@ def plot(delays):
     plt.grid(axis = 'x', color ='white', linestyle='-')
 
     plt.title('Total Minutes Delayed per Airline')
-    plt.show()
 
 
 # In[ ]:
 
 
 # Show a bar chart of the delays
-plot(delays)
+# plot(delays)
 
 
 # In[ ]:

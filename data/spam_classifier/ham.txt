@@ -1,0 +1,423 @@
+From exmh-workers-admin@redhat.com  Thu Aug 22 12:36:23 2002
+Return-Path: <exmh-workers-admin@spamassassin.taint.org>
+Delivered-To: zzzz@localhost.netnoteinc.com
+Received: from localhost (localhost [127.0.0.1])
+	by phobos.labs.netnoteinc.com (Postfix) with ESMTP id D03E543C36
+	for <zzzz@localhost>; Thu, 22 Aug 2002 07:36:16 -0400 (EDT)
+Received: from phobos [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for zzzz@localhost (single-drop); Thu, 22 Aug 2002 12:36:16 +0100 (IST)
+Received: from listman.spamassassin.taint.org (listman.spamassassin.taint.org [66.187.233.211]) by
+    dogma.slashnull.org (8.11.6/8.11.6) with ESMTP id g7MBYrZ04811 for
+    <zzzz-exmh@spamassassin.taint.org>; Thu, 22 Aug 2002 12:34:53 +0100
+Received: from listman.spamassassin.taint.org (localhost.localdomain [127.0.0.1]) by
+    listman.redhat.com (Postfix) with ESMTP id 8386540858; Thu, 22 Aug 2002
+    07:35:02 -0400 (EDT)
+Delivered-To: exmh-workers@listman.spamassassin.taint.org
+Received: from int-mx1.corp.spamassassin.taint.org (int-mx1.corp.spamassassin.taint.org
+    [172.16.52.254]) by listman.redhat.com (Postfix) with ESMTP id 10CF8406D7
+    for <exmh-workers@listman.redhat.com>; Thu, 22 Aug 2002 07:34:10 -0400
+    (EDT)
+Received: (from mail@localhost) by int-mx1.corp.spamassassin.taint.org (8.11.6/8.11.6)
+    id g7MBY7g11259 for exmh-workers@listman.redhat.com; Thu, 22 Aug 2002
+    07:34:07 -0400
+Received: from mx1.spamassassin.taint.org (mx1.spamassassin.taint.org [172.16.48.31]) by
+    int-mx1.corp.redhat.com (8.11.6/8.11.6) with SMTP id g7MBY7Y11255 for
+    <exmh-workers@redhat.com>; Thu, 22 Aug 2002 07:34:07 -0400
+Received: from ratree.psu.ac.th ([202.28.97.6]) by mx1.spamassassin.taint.org
+    (8.11.6/8.11.6) with SMTP id g7MBIhl25223 for <exmh-workers@redhat.com>;
+    Thu, 22 Aug 2002 07:18:55 -0400
+Received: from delta.cs.mu.OZ.AU (delta.coe.psu.ac.th [172.30.0.98]) by
+    ratree.psu.ac.th (8.11.6/8.11.6) with ESMTP id g7MBWel29762;
+    Thu, 22 Aug 2002 18:32:40 +0700 (ICT)
+Received: from munnari.OZ.AU (localhost [127.0.0.1]) by delta.cs.mu.OZ.AU
+    (8.11.6/8.11.6) with ESMTP id g7MBQPW13260; Thu, 22 Aug 2002 18:26:25
+    +0700 (ICT)
+From: Robert Elz <kre@munnari.OZ.AU>
+To: Chris Garrigues <cwg-dated-1030377287.06fa6d@DeepEddy.Com>
+Cc: exmh-workers@spamassassin.taint.org
+Subject: Re: New Sequences Window
+In-Reply-To: <1029945287.4797.TMDA@deepeddy.vircio.com>
+References: <1029945287.4797.TMDA@deepeddy.vircio.com>
+    <1029882468.3116.TMDA@deepeddy.vircio.com> <9627.1029933001@munnari.OZ.AU>
+    <1029943066.26919.TMDA@deepeddy.vircio.com>
+    <1029944441.398.TMDA@deepeddy.vircio.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Message-Id: <13258.1030015585@munnari.OZ.AU>
+X-Loop: exmh-workers@spamassassin.taint.org
+Sender: exmh-workers-admin@spamassassin.taint.org
+Errors-To: exmh-workers-admin@spamassassin.taint.org
+X-Beenthere: exmh-workers@spamassassin.taint.org
+X-Mailman-Version: 2.0.1
+Precedence: bulk
+List-Help: <mailto:exmh-workers-request@spamassassin.taint.org?subject=help>
+List-Post: <mailto:exmh-workers@spamassassin.taint.org>
+List-Subscribe: <https://listman.spamassassin.taint.org/mailman/listinfo/exmh-workers>,
+    <mailto:exmh-workers-request@redhat.com?subject=subscribe>
+List-Id: Discussion list for EXMH developers <exmh-workers.spamassassin.taint.org>
+List-Unsubscribe: <https://listman.spamassassin.taint.org/mailman/listinfo/exmh-workers>,
+    <mailto:exmh-workers-request@redhat.com?subject=unsubscribe>
+List-Archive: <https://listman.spamassassin.taint.org/mailman/private/exmh-workers/>
+Date: Thu, 22 Aug 2002 18:26:25 +0700
+
+    Date:        Wed, 21 Aug 2002 10:54:46 -0500
+    From:        Chris Garrigues <cwg-dated-1030377287.06fa6d@DeepEddy.Com>
+    Message-ID:  <1029945287.4797.TMDA@deepeddy.vircio.com>
+
+
+  | I can't reproduce this error.
+
+For me it is very repeatable... (like every time, without fail).
+
+This is the debug log of the pick happening ...
+
+18:19:03 Pick_It {exec pick +inbox -list -lbrace -lbrace -subject ftp -rbrace -rbrace} {4852-4852 -sequence mercury}
+18:19:03 exec pick +inbox -list -lbrace -lbrace -subject ftp -rbrace -rbrace 4852-4852 -sequence mercury
+18:19:04 Ftoc_PickMsgs {{1 hit}}
+18:19:04 Marking 1 hits
+18:19:04 tkerror: syntax error in expression "int ...
+
+Note, if I run the pick command by hand ...
+
+delta$ pick +inbox -list -lbrace -lbrace -subject ftp -rbrace -rbrace  4852-4852 -sequence mercury
+1 hit
+
+That's where the "1 hit" comes from (obviously).  The version of nmh I'm
+using is ...
+
+delta$ pick -version
+pick -- nmh-1.0.4 [compiled on fuchsia.cs.mu.OZ.AU at Sun Mar 17 14:55:56 ICT 2002]
+
+And the relevant part of my .mh_profile ...
+
+delta$ mhparam pick
+-seq sel -list
+
+
+Since the pick command works, the sequence (actually, both of them, the
+one that's explicit on the command line, from the search popup, and the
+one that comes from .mh_profile) do get created.
+
+kre
+
+ps: this is still using the version of the code form a day ago, I haven't
+been able to reach the cvs repository today (local routing issue I think).
+
+
+
+_______________________________________________
+Exmh-workers mailing list
+Exmh-workers@redhat.com
+https://listman.redhat.com/mailman/listinfo/exmh-workers
+
+From Steve_Burt@cursor-system.com  Thu Aug 22 12:46:39 2002
+Return-Path: <Steve_Burt@cursor-system.com>
+Delivered-To: zzzz@localhost.netnoteinc.com
+Received: from localhost (localhost [127.0.0.1])
+	by phobos.labs.netnoteinc.com (Postfix) with ESMTP id BE12E43C34
+	for <zzzz@localhost>; Thu, 22 Aug 2002 07:46:38 -0400 (EDT)
+Received: from phobos [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for zzzz@localhost (single-drop); Thu, 22 Aug 2002 12:46:38 +0100 (IST)
+Received: from n20.grp.scd.yahoo.com (n20.grp.scd.yahoo.com
+    [66.218.66.76]) by dogma.slashnull.org (8.11.6/8.11.6) with SMTP id
+    g7MBkTZ05087 for <zzzz@spamassassin.taint.org>; Thu, 22 Aug 2002 12:46:29 +0100
+X-Egroups-Return: sentto-2242572-52726-1030016790-zzzz=spamassassin.taint.org@returns.groups.yahoo.com
+Received: from [66.218.67.196] by n20.grp.scd.yahoo.com with NNFMP;
+    22 Aug 2002 11:46:30 -0000
+X-Sender: steve.burt@cursor-system.com
+X-Apparently-To: zzzzteana@yahoogroups.com
+Received: (EGP: mail-8_1_0_1); 22 Aug 2002 11:46:29 -0000
+Received: (qmail 11764 invoked from network); 22 Aug 2002 11:46:29 -0000
+Received: from unknown (66.218.66.217) by m3.grp.scd.yahoo.com with QMQP;
+    22 Aug 2002 11:46:29 -0000
+Received: from unknown (HELO mailgateway.cursor-system.com) (62.189.7.27)
+    by mta2.grp.scd.yahoo.com with SMTP; 22 Aug 2002 11:46:29 -0000
+Received: from exchange1.cps.local (unverified) by
+    mailgateway.cursor-system.com (Content Technologies SMTPRS 4.2.10) with
+    ESMTP id <T5cde81f695ac1d100407d@mailgateway.cursor-system.com> for
+    <forteana@yahoogroups.com>; Thu, 22 Aug 2002 13:14:10 +0100
+Received: by exchange1.cps.local with Internet Mail Service (5.5.2653.19)
+    id <PXX6AT23>; Thu, 22 Aug 2002 12:46:27 +0100
+Message-Id: <5EC2AD6D2314D14FB64BDA287D25D9EF12B4F6@exchange1.cps.local>
+To: "'zzzzteana@yahoogroups.com'" <zzzzteana@yahoogroups.com>
+X-Mailer: Internet Mail Service (5.5.2653.19)
+X-Egroups-From: Steve Burt <steve.burt@cursor-system.com>
+From: Steve Burt <Steve_Burt@cursor-system.com>
+X-Yahoo-Profile: pyruse
+MIME-Version: 1.0
+Mailing-List: list zzzzteana@yahoogroups.com; contact
+    forteana-owner@yahoogroups.com
+Delivered-To: mailing list zzzzteana@yahoogroups.com
+Precedence: bulk
+List-Unsubscribe: <mailto:zzzzteana-unsubscribe@yahoogroups.com>
+Date: Thu, 22 Aug 2002 12:46:18 +0100
+Subject: [zzzzteana] RE: Alexander
+Reply-To: zzzzteana@yahoogroups.com
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+Martin A posted:
+Tassos Papadopoulos, the Greek sculptor behind the plan, judged that the
+ limestone of Mount Kerdylio, 70 miles east of Salonika and not far from the
+ Mount Athos monastic community, was ideal for the patriotic sculpture. 
+ 
+ As well as Alexander's granite features, 240 ft high and 170 ft wide, a
+ museum, a restored amphitheatre and car park for admiring crowds are
+planned
+---------------------
+So is this mountain limestone or granite?
+If it's limestone, it'll weather pretty fast.
+
+------------------------ Yahoo! Groups Sponsor ---------------------~-->
+4 DVDs Free +s&p Join Now
+http://us.click.yahoo.com/pt6YBB/NXiEAA/mG3HAA/7gSolB/TM
+---------------------------------------------------------------------~->
+
+To unsubscribe from this group, send an email to:
+forteana-unsubscribe@egroups.com
+
+ 
+
+Your use of Yahoo! Groups is subject to http://docs.yahoo.com/info/terms/ 
+
+
+
+From timc@2ubh.com  Thu Aug 22 13:52:59 2002
+Return-Path: <timc@2ubh.com>
+Delivered-To: zzzz@localhost.netnoteinc.com
+Received: from localhost (localhost [127.0.0.1])
+	by phobos.labs.netnoteinc.com (Postfix) with ESMTP id 0314547C66
+	for <zzzz@localhost>; Thu, 22 Aug 2002 08:52:58 -0400 (EDT)
+Received: from phobos [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for zzzz@localhost (single-drop); Thu, 22 Aug 2002 13:52:59 +0100 (IST)
+Received: from n16.grp.scd.yahoo.com (n16.grp.scd.yahoo.com
+    [66.218.66.71]) by dogma.slashnull.org (8.11.6/8.11.6) with SMTP id
+    g7MCrdZ07070 for <zzzz@spamassassin.taint.org>; Thu, 22 Aug 2002 13:53:39 +0100
+X-Egroups-Return: sentto-2242572-52733-1030020820-zzzz=spamassassin.taint.org@returns.groups.yahoo.com
+Received: from [66.218.67.198] by n16.grp.scd.yahoo.com with NNFMP;
+    22 Aug 2002 12:53:40 -0000
+X-Sender: timc@2ubh.com
+X-Apparently-To: zzzzteana@yahoogroups.com
+Received: (EGP: mail-8_1_0_1); 22 Aug 2002 12:53:39 -0000
+Received: (qmail 76099 invoked from network); 22 Aug 2002 12:53:39 -0000
+Received: from unknown (66.218.66.218) by m5.grp.scd.yahoo.com with QMQP;
+    22 Aug 2002 12:53:39 -0000
+Received: from unknown (HELO rhenium.btinternet.com) (194.73.73.93) by
+    mta3.grp.scd.yahoo.com with SMTP; 22 Aug 2002 12:53:39 -0000
+Received: from host217-36-23-185.in-addr.btopenworld.com ([217.36.23.185])
+    by rhenium.btinternet.com with esmtp (Exim 3.22 #8) id 17hrT0-0004gj-00
+    for forteana@yahoogroups.com; Thu, 22 Aug 2002 13:53:38 +0100
+X-Mailer: Microsoft Outlook Express Macintosh Edition - 4.5 (0410)
+To: zzzzteana <zzzzteana@yahoogroups.com>
+X-Priority: 3
+Message-Id: <E17hrT0-0004gj-00@rhenium.btinternet.com>
+From: "Tim Chapman" <timc@2ubh.com>
+X-Yahoo-Profile: tim2ubh
+MIME-Version: 1.0
+Mailing-List: list zzzzteana@yahoogroups.com; contact
+    forteana-owner@yahoogroups.com
+Delivered-To: mailing list zzzzteana@yahoogroups.com
+Precedence: bulk
+List-Unsubscribe: <mailto:zzzzteana-unsubscribe@yahoogroups.com>
+Date: Thu, 22 Aug 2002 13:52:38 +0100
+Subject: [zzzzteana] Moscow bomber
+Reply-To: zzzzteana@yahoogroups.com
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+Man Threatens Explosion In Moscow 
+
+Thursday August 22, 2002 1:40 PM
+MOSCOW (AP) - Security officers on Thursday seized an unidentified man who
+said he was armed with explosives and threatened to blow up his truck in
+front of Russia's Federal Security Services headquarters in Moscow, NTV
+television reported.
+The officers seized an automatic rifle the man was carrying, then the man
+got out of the truck and was taken into custody, NTV said. No other details
+were immediately available.
+The man had demanded talks with high government officials, the Interfax and
+ITAR-Tass news agencies said. Ekho Moskvy radio reported that he wanted to
+talk with Russian President Vladimir Putin.
+Police and security forces rushed to the Security Service building, within
+blocks of the Kremlin, Red Square and the Bolshoi Ballet, and surrounded the
+man, who claimed to have one and a half tons of explosives, the news
+agencies said. Negotiations continued for about one and a half hours outside
+the building, ITAR-Tass and Interfax reported, citing witnesses.
+The man later drove away from the building, under police escort, and drove
+to a street near Moscow's Olympic Penta Hotel, where authorities held
+further negotiations with him, the Moscow police press service said. The
+move appeared to be an attempt by security services to get him to a more
+secure location. 
+
+------------------------ Yahoo! Groups Sponsor ---------------------~-->
+4 DVDs Free +s&p Join Now
+http://us.click.yahoo.com/pt6YBB/NXiEAA/mG3HAA/7gSolB/TM
+---------------------------------------------------------------------~->
+
+To unsubscribe from this group, send an email to:
+forteana-unsubscribe@egroups.com
+
+ 
+
+Your use of Yahoo! Groups is subject to http://docs.yahoo.com/info/terms/ 
+
+
+
+From irregulars-admin@tb.tf  Thu Aug 22 14:23:39 2002
+Return-Path: <irregulars-admin@tb.tf>
+Delivered-To: zzzz@localhost.netnoteinc.com
+Received: from localhost (localhost [127.0.0.1])
+	by phobos.labs.netnoteinc.com (Postfix) with ESMTP id 9DAE147C66
+	for <zzzz@localhost>; Thu, 22 Aug 2002 09:23:38 -0400 (EDT)
+Received: from phobos [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for zzzz@localhost (single-drop); Thu, 22 Aug 2002 14:23:38 +0100 (IST)
+Received: from web.tb.tf (route-64-131-126-36.telocity.com
+    [64.131.126.36]) by dogma.slashnull.org (8.11.6/8.11.6) with ESMTP id
+    g7MDGOZ07922 for <zzzz-irr@spamassassin.taint.org>; Thu, 22 Aug 2002 14:16:24 +0100
+Received: from web.tb.tf (localhost.localdomain [127.0.0.1]) by web.tb.tf
+    (8.11.6/8.11.6) with ESMTP id g7MDP9I16418; Thu, 22 Aug 2002 09:25:09
+    -0400
+Received: from red.harvee.home (red [192.168.25.1] (may be forged)) by
+    web.tb.tf (8.11.6/8.11.6) with ESMTP id g7MDO4I16408 for
+    <irregulars@tb.tf>; Thu, 22 Aug 2002 09:24:04 -0400
+Received: from prserv.net (out4.prserv.net [32.97.166.34]) by
+    red.harvee.home (8.11.6/8.11.6) with ESMTP id g7MDFBD29237 for
+    <irregulars@tb.tf>; Thu, 22 Aug 2002 09:15:12 -0400
+Received: from [209.202.248.109]
+    (slip-32-103-249-10.ma.us.prserv.net[32.103.249.10]) by prserv.net (out4)
+    with ESMTP id <2002082213150220405qu8jce>; Thu, 22 Aug 2002 13:15:07 +0000
+MIME-Version: 1.0
+X-Sender: @ (Unverified)
+Message-Id: <p04330137b98a941c58a8@[209.202.248.109]>
+To: undisclosed-recipient: ;
+From: Monty Solomon <monty@roscom.com>
+Content-Type: text/plain; charset="us-ascii"
+Subject: [IRR] Klez: The Virus That  Won't Die
+Sender: irregulars-admin@tb.tf
+Errors-To: irregulars-admin@tb.tf
+X-Beenthere: irregulars@tb.tf
+X-Mailman-Version: 2.0.6
+Precedence: bulk
+List-Help: <mailto:irregulars-request@tb.tf?subject=help>
+List-Post: <mailto:irregulars@tb.tf>
+List-Subscribe: <http://tb.tf/mailman/listinfo/irregulars>,
+    <mailto:irregulars-request@tb.tf?subject=subscribe>
+List-Id: New home of the TBTF Irregulars mailing list <irregulars.tb.tf>
+List-Unsubscribe: <http://tb.tf/mailman/listinfo/irregulars>,
+    <mailto:irregulars-request@tb.tf?subject=unsubscribe>
+List-Archive: <http://tb.tf/mailman/private/irregulars/>
+Date: Thu, 22 Aug 2002 09:15:25 -0400
+
+Klez: The Virus That Won't Die
+ 
+Already the most prolific virus ever, Klez continues to wreak havoc.
+
+Andrew Brandt
+>>From the September 2002 issue of PC World magazine
+Posted Thursday, August 01, 2002
+
+
+The Klez worm is approaching its seventh month of wriggling across 
+the Web, making it one of the most persistent viruses ever. And 
+experts warn that it may be a harbinger of new viruses that use a 
+combination of pernicious approaches to go from PC to PC.
+
+Antivirus software makers Symantec and McAfee both report more than 
+2000 new infections daily, with no sign of letup at press time. The 
+British security firm MessageLabs estimates that 1 in every 300 
+e-mail messages holds a variation of the Klez virus, and says that 
+Klez has already surpassed last summer's SirCam as the most prolific 
+virus ever.
+
+And some newer Klez variants aren't merely nuisances--they can carry 
+other viruses in them that corrupt your data.
+
+...
+
+http://www.pcworld.com/news/article/0,aid,103259,00.asp
+_______________________________________________
+Irregulars mailing list
+Irregulars@tb.tf
+http://tb.tf/mailman/listinfo/irregulars
+
+From Stewart.Smith@ee.ed.ac.uk  Thu Aug 22 14:44:26 2002
+Return-Path: <Stewart.Smith@ee.ed.ac.uk>
+Delivered-To: zzzz@localhost.netnoteinc.com
+Received: from localhost (localhost [127.0.0.1])
+	by phobos.labs.netnoteinc.com (Postfix) with ESMTP id EC69D47C66
+	for <zzzz@localhost>; Thu, 22 Aug 2002 09:44:25 -0400 (EDT)
+Received: from phobos [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for zzzz@localhost (single-drop); Thu, 22 Aug 2002 14:44:25 +0100 (IST)
+Received: from n6.grp.scd.yahoo.com (n6.grp.scd.yahoo.com [66.218.66.90])
+    by dogma.slashnull.org (8.11.6/8.11.6) with SMTP id g7MDcOZ08504 for
+    <zzzz@spamassassin.taint.org>; Thu, 22 Aug 2002 14:38:25 +0100
+X-Egroups-Return: sentto-2242572-52736-1030023506-zzzz=spamassassin.taint.org@returns.groups.yahoo.com
+Received: from [66.218.67.192] by n6.grp.scd.yahoo.com with NNFMP;
+    22 Aug 2002 13:38:26 -0000
+X-Sender: Stewart.Smith@ee.ed.ac.uk
+X-Apparently-To: zzzzteana@yahoogroups.com
+Received: (EGP: mail-8_1_0_1); 22 Aug 2002 13:38:25 -0000
+Received: (qmail 48882 invoked from network); 22 Aug 2002 13:38:25 -0000
+Received: from unknown (66.218.66.218) by m10.grp.scd.yahoo.com with QMQP;
+    22 Aug 2002 13:38:25 -0000
+Received: from unknown (HELO postbox.ee.ed.ac.uk) (129.215.80.253) by
+    mta3.grp.scd.yahoo.com with SMTP; 22 Aug 2002 13:38:24 -0000
+Received: from ee.ed.ac.uk (sxs@dunblane [129.215.34.86]) by
+    postbox.ee.ed.ac.uk (8.11.0/8.11.0) with ESMTP id g7MDcNi28645 for
+    <forteana@yahoogroups.com>; Thu, 22 Aug 2002 14:38:23 +0100 (BST)
+Message-Id: <3D64E94E.8060301@ee.ed.ac.uk>
+Organization: Scottish Microelectronics Centre
+User-Agent: Mozilla/5.0 (X11; U; SunOS sun4u; en-US; rv:1.1b) Gecko/20020628
+X-Accept-Language: en, en-us
+To: zzzzteana@yahoogroups.com
+References: <3D64F325.11319.61EA648@localhost>
+From: Stewart Smith <Stewart.Smith@ee.ed.ac.uk>
+X-Yahoo-Profile: stochasticus
+MIME-Version: 1.0
+Mailing-List: list zzzzteana@yahoogroups.com; contact
+    forteana-owner@yahoogroups.com
+Delivered-To: mailing list zzzzteana@yahoogroups.com
+Precedence: bulk
+List-Unsubscribe: <mailto:zzzzteana-unsubscribe@yahoogroups.com>
+Date: Thu, 22 Aug 2002 14:38:22 +0100
+Subject: Re: [zzzzteana] Nothing like mama used to make
+Reply-To: zzzzteana@yahoogroups.com
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+>  in adding cream to spaghetti carbonara, which has the same effect on pasta as
+>  making a pizza a deep-pie; 
+
+I just had to jump in here as Carbonara is one of my favourites to make and ask 
+what the hell are you supposed to use instead of cream?  I've never seen a 
+recipe that hasn't used this.  Personally I use low fat creme fraiche because it 
+works quite nicely but the only time I've seen an supposedly authentic recipe 
+for carbonara  it was identical to mine (cream, eggs and lots of fresh parmesan) 
+except for the creme fraiche.
+
+Stew
+-- 
+Stewart Smith
+Scottish Microelectronics Centre, University of Edinburgh.
+http://www.ee.ed.ac.uk/~sxs/
+
+
+------------------------ Yahoo! Groups Sponsor ---------------------~-->
+4 DVDs Free +s&p Join Now
+http://us.click.yahoo.com/pt6YBB/NXiEAA/mG3HAA/7gSolB/TM
+---------------------------------------------------------------------~->
+
+To unsubscribe from this group, send an email to:
+forteana-unsubscribe@egroups.com
+
+ 
+
+Your use of Yahoo! Groups is subject to http://docs.yahoo.com/info/terms/ 
+
+
+
