@@ -20,6 +20,7 @@ This repo contains the materials for my Data Analytics and Machine Learning on B
 If you want to install and run everything on your computer, here are the best tutorials I've found for getting Python and Spark running on your computer.
 
 * [Windows](https://medium.com/@GalarnykMichael/install-spark-on-windows-pyspark-4498a5d8d66c)
+* [Mac](https://medium.com/@GalarnykMichael/install-spark-on-mac-pyspark-453f395f240b)
 
 ### Graphviz
 
