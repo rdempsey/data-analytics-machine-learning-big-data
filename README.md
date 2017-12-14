@@ -31,4 +31,6 @@ For the package install:
 * Mac ([download](http://www.graphviz.org/download/))
 * Linux: `sudo apt-get install graphviz`
 
+On Windows, once you install Graphviz, add the full path to the bin directory in the Graphviz to your PATH. 
+
 To install the Python package on all operating systems: `pip install graphviz`
